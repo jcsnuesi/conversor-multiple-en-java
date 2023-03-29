@@ -145,7 +145,6 @@ public class Funciones extends ConversionMonedas implements ConversionInterface 
 			return true;
 			
 		}
-		System.out.println(numToconvert);
 		return false;
 	}
 	
@@ -156,7 +155,7 @@ public class Funciones extends ConversionMonedas implements ConversionInterface 
 		double cambioTo  = to;
 		double totales = 0;
 		
-		System.out.println(monedaFrom + " "+ cambioTo);
+	
 		DecimalFormat decimal = new DecimalFormat("#,###.#");
 		DecimalFormat LessThanzero = new DecimalFormat("#.###");
 		String TofromFormated;

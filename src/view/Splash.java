@@ -50,7 +50,6 @@ public class Splash extends JFrame {
 	 */
 	public Splash() {
 	    setUndecorated(true);
-		setType(Type.UTILITY);
 		setResizable(false);
 		
 		setBounds(100, 100, 573, 600);

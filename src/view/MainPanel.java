@@ -125,25 +125,22 @@ public class MainPanel extends JFrame {
 		panelPrograms.setLayout(null);
 		
 		
-		cboxSimboloTo.setFont(new Font("Roboto", Font.PLAIN, 14));
-		
+		cboxSimboloTo.setFont(new Font("Roboto", Font.PLAIN, 14));		
 		cboxSimboloTo.setBounds(150, 162, 156, 43);
-		panelPrograms.add(cboxSimboloTo);
-
-		opciones.add("Grados Fahrenheit");
-		opciones.add("Grados Celcius");	
-		
 		cboxSimboloTo.setModel(new DefaultComboBoxModel(dataToWork.currencyNames().toArray()));
+		panelPrograms.add(cboxSimboloTo);
 		
 		
-		cboxSimbolo.setFont(new Font("Roboto", Font.PLAIN, 14));
 		
+		cboxSimbolo.setFont(new Font("Roboto", Font.PLAIN, 14));		
 		cboxSimbolo.setBounds(150, 73, 156, 46);
+		cboxSimbolo.setModel(new DefaultComboBoxModel(dataToWork.currencyNames().toArray()));
 		panelPrograms.add(cboxSimbolo);
 		
-		cboxSimbolo.setModel(new DefaultComboBoxModel(dataToWork.currencyNames().toArray()));
-
+		//Agregar las banderas al iniciar programa
+		//FLAG 1 ICON
 		
+	
 		txtTo = new JTextField();
 		txtTo.setFont(new Font("Roboto", Font.BOLD, 24));
 		txtTo.setBounds(336, 162, 107, 43);
@@ -211,7 +208,8 @@ public class MainPanel extends JFrame {
 					peso.setCantidad(Double.parseDouble(txtTo.getText()));
 					peso.setHacia((String)cboxSimbolo.getSelectedItem());
 					String totalFormated = format.format(peso.choise((String)cboxSimboloTo.getSelectedItem()));
-					labeltotal.setBounds(120, 243, 377, 37);
+					labeltotal.setBounds(32, 243, 430, 30);
+					labeltotal.setText(txtTo.getText() + " " + cboxSimboloTo.getSelectedItem() + " equivalen a: " +  totalFormated + " " + cboxSimbolo.getSelectedItem()); 
 					txtFrom.setText(totalFormated);
 					
 
@@ -222,6 +220,8 @@ public class MainPanel extends JFrame {
 			
 		});
 		
+	
+	
 		
 		
 		txtFrom = new JTextField();
@@ -239,6 +239,18 @@ public class MainPanel extends JFrame {
 	flag2 = new JLabel("");
 	flag2.setBounds(62, 159, 78, 46);
 	panelPrograms.add(flag2);
+	
+	// FLAG 1 ICON
+	String CurrSimbolF = codeISO(cboxSimbolo.getSelectedItem().toString());				
+	URL flagImgF = dataToWork.flags(CurrSimbolF);
+	
+	
+	//FLAG 2 ICON
+	String CurrSimbolT =codeISO(cboxSimboloTo.getSelectedItem().toString());	
+	URL flagImgT = dataToWork.flags(CurrSimbolT);
+	
+	flag1.setIcon(getImageIcon(flagImgF));
+	flag2.setIcon(getImageIcon(flagImgT));
 	
 	
 	lblCurrencyConverter.setFont(new Font("Roboto", Font.BOLD, 22));
@@ -311,7 +323,7 @@ public class MainPanel extends JFrame {
 				peso.setHacia((String)cboxSimboloTo.getSelectedItem());
 				String totalFormated = format.format(peso.choise((String)cboxSimbolo.getSelectedItem()));
 				txtTo.setText(totalFormated);
-				labeltotal.setBounds(32, 243, 430, 15);
+				labeltotal.setBounds(32, 243, 430, 30);
 				labeltotal.setText(txtFrom.getText() + " " + cboxSimbolo.getSelectedItem() + " equivalen a: " +  totalFormated + " " + cboxSimboloTo.getSelectedItem()); 
 
 
@@ -381,7 +393,10 @@ public class MainPanel extends JFrame {
 				protected Void doInBackground() throws Exception {
 					cboxSimbolo.removeAllItems();
 					cboxSimboloTo.removeAllItems();
-					  // Simula una carga de elementos en el JComboBox
+					  
+					opciones.add("Grados Fahrenheit");
+					opciones.add("Grados Celsius");
+				
                     for (int i = 0; i <= opciones.size(); i++) {
                     	publish(opciones.get(i));
                       
@@ -533,6 +548,7 @@ public class MainPanel extends JFrame {
 				String CurrSimbolT =codeISO(cboxT.getSelectedItem().toString());	
 				URL flagImgT = dataToWork.flags(CurrSimbolT);
 				
+				
 				if (cboxF.getName() == "fromCombo") {
 					flag1.setIcon(getImageIcon(flagImgF));
 					flag2.setIcon(getImageIcon(flagImgT));
@@ -565,7 +581,7 @@ public class MainPanel extends JFrame {
 				
 			}
 			
-
+			 
 			if (cboxF.getSelectedIndex() == 0) {
 			
 				flag1.setIcon(labelsImg(imageIcon));
@@ -641,7 +657,7 @@ public class MainPanel extends JFrame {
 			double totales = degree.degrees(number, code.getSelectedIndex());
 			String totalString = decimal.format(totales);
 			txtTo.setText(totalString);
-			labeltotal.setText(txtFrom.getText() + " "+ code.getSelectedItem() + " es igual a: " + totalString + " Celcius");
+			labeltotal.setText(txtFrom.getText() + " "+ code.getSelectedItem() + " es igual a: " + totalString + " Celsius");
 			
 			
 		
@@ -662,7 +678,7 @@ public class MainPanel extends JFrame {
 			double totales = degree.degrees(number, code.getSelectedIndex());
 			String totalString = decimal.format(totales);
 			txtFrom.setText(totalString);
-			labeltotal.setText(txtTo.getText() + " "+ code.getSelectedItem() + " es igual a: " + totalString + " Celcius");
+			labeltotal.setText(txtTo.getText() + " "+ code.getSelectedItem() + " es igual a: " + totalString + " Celsius");
 		
 		}else if(code.getSelectedIndex() == 1 && !valueDinamico){
 			
