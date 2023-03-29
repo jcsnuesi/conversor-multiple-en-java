@@ -25,8 +25,7 @@ Para este conversro al igual que el anterior me soporte de la programacion orien
 
 # Conversor multiproposito.
 
-https://i.postimg.cc/LX5XRtd3/ezgif-com-gif-maker.gif
 
-# Diseño.
-- Java Swing
+[![Alt text](https://img.youtube.com/vi/PjzYC7DFP7k/0.jpg)](https://www.youtube.com/watch?v=PjzYC7DFP7k)
+
 
