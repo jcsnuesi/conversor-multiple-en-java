@@ -3,7 +3,7 @@
 
 - Descripcion:
 
-El siguiente software fue realizado en el lenguaje de programacion JAVA en el IDE Eclipse con la version JAVA 8 en donde se empleo el patron de diseñor MVC, interfaces y POO. El mismo trata de un conversor de monedas, temperatura y pesos. A continuacion un desglose del software.
+El siguiente software fue realizado en el lenguaje de programacion JAVA en el IDE Eclipse con la version JAVA 8 en donde se empleo el patron de diseñor MVC, interfaces , Swing y POO. El mismo trata de un conversor de monedas, temperatura y pesos. A continuacion un desglose del software.
 
 - Conversor de monedas:
 
