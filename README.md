@@ -25,4 +25,8 @@ Para este conversro al igual que el anterior me soporte de la programacion orien
 
 # Conversor multiproposito.
 
-![](ezgif.com-gif-maker.gif)
+![]([ezgif.com-gif-maker.gif](https://i.postimg.cc/LX5XRtd3/ezgif-com-gif-maker.gif))
+
+# Diseño.
+- Java Swing
+
